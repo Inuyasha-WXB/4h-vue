@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var inorderTraversal = function (root) {
+            if (root == null) {
+                return []
+            }
+            let res = []
+            function view(node) {
+                res.push(node.val)
+                if (node.left !== null) {
+                    view(node.left)
+                }
+                if (node.right !== null) {
+                    view(node.right)
+                }
+            }
+            view(root)
+            // 返回结果
+            return res
+        };
+        inorderTraversal([1, null, 2, 3])
+    </script>
+</body>
+
+</html>
